@@ -1,0 +1,18 @@
+#pragma once
+#include <cstddef>
+#include <cstring>
+// Source contains only internal cells, with components contiguous per cell.
+// Destination has bc ghost cells on both ends of all three dimensions.
+template<class T>
+inline void copy_packed_interior(T* destination, const T* source,
+                                int ni, int nj, int nk, int bc, int width)
+{
+    const size_t ny=static_cast<size_t>(nj)+2*bc;
+    const size_t nz=static_cast<size_t>(nk)+2*bc;
+    const size_t row_elements=static_cast<size_t>(nk)*width;
+    for(int i=0;i<ni;++i) for(int j=0;j<nj;++j){
+        const size_t input=(static_cast<size_t>(i)*nj+j)*row_elements;
+        const size_t output=((static_cast<size_t>(i+bc)*ny+(j+bc))*nz+bc)*width;
+        std::memcpy(destination+output,source+input,row_elements*sizeof(T));
+    }
+}

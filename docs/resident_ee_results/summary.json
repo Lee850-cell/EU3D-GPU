@@ -1,0 +1,39 @@
+{
+  "off": {
+    "runs": [
+      {
+        "loop": 19.0037,
+        "total": 23.1878
+      },
+      {
+        "loop": 18.7625,
+        "total": 21.6837
+      },
+      {
+        "loop": 18.931,
+        "total": 21.9367
+      }
+    ],
+    "median_loop": 18.931,
+    "median_total": 21.9367
+  },
+  "on": {
+    "runs": [
+      {
+        "loop": 17.9289,
+        "total": 20.6791
+      },
+      {
+        "loop": 18.0988,
+        "total": 20.8853
+      },
+      {
+        "loop": 17.9422,
+        "total": 20.7331
+      }
+    ],
+    "median_loop": 17.9422,
+    "median_total": 20.7331
+  },
+  "loop_reduction_percent": 5.2231789128942
+}
