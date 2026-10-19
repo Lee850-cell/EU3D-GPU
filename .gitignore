@@ -3,4 +3,5 @@
 /runs/
 /output_*/
 __pycache__/
-/README.md
+
+/docs/latest_results/
